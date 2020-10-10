@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+
+  <action name="top">
+    <one-of>
+      <item>main menu</item>
+      <item>top</item>
+      <item>beginning</item>
+      <item>cancel</item>
+      <item>forget it</item>
+      <item>never mind</item>
+      <item>abort</item>
+    </one-of>
+  </action>
+
+  <action name="up">
+    <one-of>
+      <item>up</item>
+      <item>back</item>
+      <item>go back</item>
+    </one-of>
+  </action>
+
+  <individual name="city_london">
+    <one-of>
+      <item>London</item>
+      <item>london</item> 
+      <item>london city</item>
+      <item>London town</item>
+      <item>London city</item>
+    </one-of>
+  </individual> 
+
+  <individual name="city_athens">
+    <one-of>
+      <item>Athens</item>
+      <item>athens</item> 
+    </one-of>
+  </individual> 
+
+  <individual name="city_paris">
+    <one-of>
+      <item>Paris</item>
+      <item>paris</item> 
+    </one-of>
+  </individual>
+
+  <individual name="city_milan">
+    <one-of>
+      <item>Milan</item>
+      <item>milan</item> 
+    </one-of>
+  </individual>
+
+  <individual name="city_heraklion">
+    <one-of>
+      <item>Heraklion</item>
+      <item>heraklion</item> 
+      <item>Iraklio</item>
+      <item>iraklio</item> 
+    </one-of>
+  </individual>
+      
+
+  <individual name="country_uk">
+    <one-of>
+      <item>UK</item>
+      <item>uk</item>
+      <item>Uk</item>
+      <item>Great Britain</item>
+      <item>GB</item>
+      <item>United kingdom</item>
+      <item>great britain</item>
+      <item>united kingdom</item>      
+    </one-of>
+  </individual>
+
+  <individual name="country_greece">
+    <one-of>
+      <item>Greece</item>
+      <item>greece</item>     
+    </one-of>
+  </individual>
+
+  <individual name="country_france">
+    <one-of>
+      <item>France</item>
+      <item>france</item>     
+    </one-of>
+  </individual>
+
+  <individual name="country_italy">
+    <one-of>
+      <item>Italy</item>
+      <item>italy</item>     
+    </one-of>
+  </individual>
+
+
+  <individual name="metric">
+    <one-of>
+      <item>metric</item>
+      <item>celcius</item>
+      <item>C</item>      
+    </one-of>
+  </individual>
+  
+  <individual name="standard">
+    <one-of>
+      <item>Standard</item>
+      <item>standard</item> 
+    </one-of>
+  </individual>
+
+  <individual name="imperial">
+    <one-of>
+      <item>imperial</item>
+      <item>fahrenheit</item>     
+    </one-of>
+  </individual>
+
+
+  <question speaker="system" type="goal">What would you like to do</question>
+
+  <question speaker="user" predicate="temperature" type="wh_question">
+    <one-of>
+      <item> what is the temperature of <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+      <item>what is the temperature</item>
+      <item>I want to know the temperature</item>
+      <item>tell me the temperature in <slot predicate="city_to_search"/></item>
+      <item>i want to know the temperature of the city <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+      <item>tell me the temperature in <slot predicate="city_to_search"/></item>
+      <item>find me the temperature in <slot predicate="city_to_search"/><slot predicate="country_to_search"/></item>
+      <item>what is the temperature of <slot predicate="city_to_search"/></item>
+      <item>what is the temperature in <slot predicate="unit"/> in <slot predicate="city_to_search"/></item>
+      <item>whats the temperature</item>
+      <item>i wonder what the temperature is like in <slot predicate="unit"/> in <slot predicate="city_to_search"/></item>
+      <item>I have to know the temperature</item>
+      <item>i wonder what the temperature is like in <slot predicate="city_to_search"/></item>
+      <item>I have to know the temperature in <slot predicate="unit"/></item>
+      <item>what is the temperature in <slot predicate="unit"/></item>
+      <item>show me the temperature in <slot predicate="unit"/></item>
+        	    
+    </one-of>
+  </question> 
+
+  <question speaker="user" predicate="weather" type="wh_question">
+    <one-of>
+      <item>what is the weather</item>
+      <item>what is the weather like right now</item>
+      <item>how is the weather</item>
+      <item>what is the weather like in <slot predicate="city_to_search"/></item>
+      <item>give me information about the weather in <slot predicate="city_to_search"/></item>
+      <item>i want to know the weather</item>
+      <item>what does the weather look like right now in <slot predicate="city_to_search"/></item>
+	    <item>whats the weather</item>
+      <item>what is the weather in <slot predicate="city_to_search"/></item>
+      <item>what does the weather look like in <slot predicate="city_to_search"/></item>
+      <item>what is the weather in <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+      <item>what is the weather in <slot predicate="city_to_search"/> <slot predicate="country_to_search"/></item>
+      <item>what is the weather</item> 
+      <item>tell me about the weather in <slot predicate="city_to_search"/> <slot predicate="country_to_search"/></item>        	    
+    </one-of> 
+  </question>  
+
+  <question speaker="system" predicate="city_to_search" type="wh_question">What city</question>
+
+  <question speaker="system" predicate="country_to_search" type="wh_question">What country</question>
+
+  <question speaker="system" predicate="unit" type="wh_question">What unit</question>
+
+  <answer speaker="system" predicate="temperature">
+   The temperature is <slot predicate="temperature"/>
+  </answer>
+
+  <answer speaker="system" predicate="unit">
+    The temperature is in <slot predicate="unit"/>
+   </answer>
+
+  <answer speaker="system" predicate="weather">
+    It's <slot predicate="weather"/>
+  </answer>
+
+
+  <answer speaker="user" predicate="city_to_search">
+    It is <slot predicate="city_to_search"/>
+  </answer>
+
+  <answer speaker="user" predicate="country_to_search">
+    It is <slot predicate="country_to_search"/>
+  </answer>
+
+  <question speaker="all" predicate="temperature" type="wh_question">the temperature</question>
+  <question speaker="all" predicate="weather" type="wh_question">the weather</question>
+
+
+</grammar>
