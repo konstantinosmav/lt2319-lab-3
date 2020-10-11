@@ -136,9 +136,8 @@ def get_data(city,country, unit="metric"):
 def temperature():
     payload = request.get_json()
     city = payload["context"]["facts"]["city_to_search"]["grammar_entry"]
-    country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]
-    #unit = payload["context"]["facts"]["unit"]["grammar_entry"]
-    data = get_data(city, country)#,unit)
+    country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]    
+    data = get_data(city, country)
     temp = data['main']['temp']
     tempstr = str(temp)
     return query_response(value=tempstr, grammar_entry=None)
@@ -152,15 +151,4 @@ def weather():
     description = data['weather'][0]['description']
     descriptionstr = str(description)
     return query_response(value=descriptionstr, grammar_entry=None)
-
-#@app.route("/temperature", methods=['POST'])
-#def temperature():
-#    payload = request.get_json()
-#    city = payload["context"]["facts"]["city_to_search"]["grammar_entry"]
-#    country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]
-#    unit = payload["context"]["facts"]["unit"]["grammar_entry"]
-#    data = get_data(city,country,unit)
-#    temp = data['main']['temp']
-#    tempstr = str(temp)
-#    return query_response(value=tempstr, grammar_entry=None)
 
