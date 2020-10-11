@@ -182,13 +182,15 @@
   </answer>
 
 
-  <answer speaker="user" predicate="city_to_search">
-    It is <slot predicate="city_to_search"/>
-  </answer>
+ 
 
-  <answer speaker="user" predicate="country_to_search">
-    It is <slot predicate="country_to_search"/>
+  <answer speaker="user">
+    <one-of>
+      <item>It is <slot predicate="city_to_search" type="individual"/></item>
+      <item>It is <slot predicate="country_to_search" type="individual"/></item>
+    </one-of>
   </answer>
+ 
 
   <question speaker="all" predicate="temperature" type="wh_question">the temperature</question>
   <question speaker="all" predicate="weather" type="wh_question">the weather</question>
