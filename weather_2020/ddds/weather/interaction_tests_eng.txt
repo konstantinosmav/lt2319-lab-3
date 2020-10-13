@@ -1,0 +1,74 @@
+--- Temperature of a place (incremental)
+U> What is the temperature
+S> What city?
+U> It is London
+S> What country?
+U> UK
+S> The temperature is *
+
+--- Temperature of a place (one-shot)
+U> what is the temperature of London in UK
+S> The temperature is *
+
+--- Temperature of a place celcius (incremental)
+U> What is the temperature in celcius
+S> What city?
+U> It is London
+S> What country?
+U> UK
+S> The temperature is *
+
+--- Weather of a place (incremental)
+U> What is the weather
+S> What city?
+U> It is London
+S> What country?
+U> UK
+S> It's *
+
+--- Weather of a place (one-shot)
+U> what is the weather in London in UK
+S> It's *
+
+
+--- Temperature of a place please(incremental)
+U> What is the temperature please
+S> What city?
+U> It is Paris
+S> What country?
+U> France
+S> The temperature is *
+
+--- Weather of a place please (one-shot)
+U> what is the weather in Athens Greece please
+S> It's *
+
+--- Weather of Heraklion- wrong
+U> what is the wether  
+S> What city?
+U> It is Heraklion please
+S> What country?
+U> Greece pls
+S> It's *
+
+--- Weather of city not in individuals 
+U> whats the weather  
+S> What city?
+U> It is Chania 
+S> What country?
+U> Greece
+S> It's *
+
+--- Weather of course
+U> please what is the weather in Milan 
+S> What country?
+U> It is of course Italy
+S> It's *
+
+--- Temperature of a place wrong
+U> what is the temperatur of Toronto in Canada in celcius
+S> The temperature is *
+
+
+
+
