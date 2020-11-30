@@ -1,3 +1,3 @@
 # lt2319_lab3
 
-Lab 3 was fun!
+A chatbot that gives information about weather and temperature and is implemented using TDM (Talkamatic Dialogue Manager).
